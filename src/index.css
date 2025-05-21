@@ -7,3 +7,25 @@ html , body{
     height: 100%;
     width: 100%;
 }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff8f0;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.App {
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-container {
+  background-color: #f2e4d9;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

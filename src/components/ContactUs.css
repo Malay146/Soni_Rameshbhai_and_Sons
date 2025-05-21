@@ -1,0 +1,189 @@
+/* --- Animated Background Circles --- */
+.animated-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  background: #ffffff; /* White background */
+}
+
+.circle {
+  position: absolute;
+  background: rgba(212, 175, 55, 0.15); /* Golden glow */
+  border-radius: 50%;
+  animation: floatUpDown 15s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+.circle:nth-child(1) { width: 150px; height: 150px; left: 10%; bottom: -100px; animation-delay: 0s; }
+.circle:nth-child(2) { width: 200px; height: 200px; left: 30%; bottom: -120px; animation-delay: 3s; }
+.circle:nth-child(3) { width: 100px; height: 100px; left: 50%; bottom: -90px; animation-delay: 6s; }
+.circle:nth-child(4) { width: 180px; height: 180px; left: 70%; bottom: -110px; animation-delay: 9s; }
+.circle:nth-child(5) { width: 130px; height: 130px; left: 85%; bottom: -100px; animation-delay: 12s; }
+
+@keyframes floatUpDown {
+  0% { transform: translateY(0) scale(1); opacity: 0.5; }
+  50% { transform: translateY(-200px) scale(1.2); opacity: 0.2; }
+  100% { transform: translateY(0) scale(1); opacity: 0.5; }
+}
+
+/* --- Contact form styling --- */
+.contact-us-box {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  position: relative;
+  z-index: 10;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #8a6d1f;
+  text-align: center;
+  border: 2px solid #d4af37; /* golden border */
+}
+
+.contact-us-box h2 {
+  margin-bottom: 20px;
+  color: #d4af37; /* Golden heading */
+  font-weight: 700;
+}
+
+.contact-us-box p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #7d6224;
+}
+
+.contact-us-box a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.contact-us-box a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #a67c00;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e5c873;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  background-color: #fffdf5;
+  color: #8a6d1f;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #bfa76f;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #e74c3c;
+  background-color: #fceaea;
+}
+
+.error-msg {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 4px;
+}
+
+button[type="submit"] {
+  background-color: #d4af37;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 12px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  box-shadow: none;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #b8912c;
+}
+
+button[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+button.loading::after {
+  content: "";
+  display: inline-block;
+  margin-left: 10px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.success-msg {
+  color: #2ecc71;
+  margin-top: 20px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.1rem;
+  text-shadow: none;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 500px) {
+  .contact-us-box {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+  }
+
+  button[type="submit"] {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+}
