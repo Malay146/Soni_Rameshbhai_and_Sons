@@ -1,18 +1,15 @@
-// App.js
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { FaHome, FaInfo, FaImages, FaPhone } from "react-icons/fa";
-import "./App.css";
-import logo from './assets/LOGO.jpg';
-import heroImage from './assets/segal-jewelry-NsH-CvU0deg-unsplash.jpg'; // new image
+import "./Navigation.css";
 
-function App() {
+function Navigation() {
   return (
     <Router>
       <div className="App">
         <header className="header">
           <div className="logo">
-            <img src={logo} alt="Logo" className="logo-img" />
+            <img src="/Images/LOGO.jpg" alt="Logo" className="logo-img" />
             <div className="brand">Soni Rameshbhai & Son</div>
           </div>
           <nav className="nav">
@@ -27,7 +24,7 @@ function App() {
         <section
           className="hero"
           id="home"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          style={{ backgroundImage: `url("/Images/segal-jewelry-NSH-CvU0deg-unsplash.jpg")` }}
         >
           <div className="hero-content">
             <h1>Timeless Craftsmanship</h1>
@@ -35,7 +32,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section" id="product">
+        {/* <section className="section" id="product">
           <h2>Our Products</h2>
           <p>We specialize in gold, diamond, and traditional jewellery designs, crafted with unmatched precision and legacy craftsmanship passed down through generations.</p>
         </section>
@@ -57,10 +54,10 @@ function App() {
 
         <footer className="footer">
           &copy; {new Date().getFullYear()} Soni Rameshbhai & Son. All rights reserved.
-        </footer>
+        </footer> */}
       </div>
     </Router>
   );
 }
 
-export default App;
+export default Navigation;
